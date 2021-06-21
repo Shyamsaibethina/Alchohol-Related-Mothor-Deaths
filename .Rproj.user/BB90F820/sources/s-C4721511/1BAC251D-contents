@@ -1,0 +1,12 @@
+name: "finalproject"
+title: "COVID 19 in India"
+description: |
+  COVID 19 in India
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
