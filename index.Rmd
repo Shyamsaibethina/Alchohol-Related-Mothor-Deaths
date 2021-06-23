@@ -1,7 +1,6 @@
 ---
 title: "COVID 19 in India"
-description: |
-  Welcome to the website. I hope you enjoy it!
+description: 
 site: distill::distill_website
 ---
 
@@ -11,6 +10,7 @@ library(tidyverse)
 library(readr)
 library(dplyr)
 library(lubridate)
+library(rvest)
 
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
@@ -18,21 +18,43 @@ library(lubridate)
 # Learn more about publishing to GitHub Pages at:
 # https://rstudio.github.io/distill/publish_website.html#github-pages
 
-covid_cases<-"owid-covid-data.csv"
-firstgraph<-read_csv(covid_cases) %>% filter(iso_code=="IND")%>% group_by(new_cases,date) %>%   group_by(month=floor_date(date, "month")) %>%
-   summarize(new_cases=sum(new_cases))
-view(firstgraph)
 
-population<-"covid19countryinfo.csv"
-View(read_csv(population))
-secondgraph<-read_csv(population)%>% filter(alpha2code=="US") %>% 
-  ggplot(aes(x=alpha2code,y=density))+geom_point()
-secondgraph
 
 
 
 ```
+```{r, echo=FALSE}
+website<-read_html("https://www.iihs.org/topics/fatality-statistics/detail/teenagers#alcohol-involvement")
+
+alldata <-website%>% html_elements("#alcohol-involvement .is-fullwidth:nth-child(4) th , #alcohol-involvement .is-fullwidth:nth-child(4) td") %>% html_text2()
+years<-alldata[seq(27,520,13)]
+
+driverskilled_16<-alldata[seq(28,520,13)]
+bac_16<-alldata[seq(29,520,13)]
+percent_16<-alldata[seq(30,520,13)]
+
+driverskilled_18<-alldata[seq(31,520,13)]
+bac_18<-alldata[seq(32,520,13)]
+percent_18<-alldata[seq(33,520,13)]
+
+driverskilled_21<-alldata[seq(34,520,13)]
+bac_21<-alldata[seq(35,520,13)]
+percent_21<-alldata[seq(36,520,13)]
+
+driverskilled_30<-alldata[seq(37,520,13)]
+bac_30<-alldata[seq(38,520,13)]
+percent_30<-alldata[seq(39,520,13)]
+
+graph1<-tibble(years,driverskilled_16,driverskilled_18,driverskilled_21,driverskilled_30,bac_16,
+              bac_18,bac_21,bac_30) %>%  
+  mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
+  mutate(across(everything(),as.numeric)) %>% 
+  pivot_longer(cols=-years,
+               names_sep = "_",names_to=c("type","age"),values_to="totalvalue") %>% 
+ ggplot(aes(x=years,y=totalvalue,fill=type)) + geom_col(position="identity") + facet_wrap(~age) + labs(title="",subtitle = "",x="Year",y="Total Deaths", caption="Source: iihs.org") + theme_minimal() + theme(panel.spacing = unit(2, "lines")) + scale_fill_discrete(name = "Cause", labels = c("Alcohol","Other"))
+```
+
 ```{r}
-ggplot(firstgraph,aes(x=month,y=new_cases)) + geom_line() + labs(x="Month",y="New Cases", caption="Source: Kaggle.com")
+graph1
 ```
 

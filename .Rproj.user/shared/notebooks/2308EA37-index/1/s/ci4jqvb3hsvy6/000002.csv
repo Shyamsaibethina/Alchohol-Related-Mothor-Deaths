@@ -1,1 +1,0 @@
-"0","ggplot(lol,aes(x=month,y=new_cases)) + geom_line() + labs(x=""Month"",y=""New Cases"", caption=""Source: Kaggle.com"")"
