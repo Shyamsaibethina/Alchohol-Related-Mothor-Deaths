@@ -1,7 +1,6 @@
 name: "finalproject"
-title: "COVID 19 in India"
-description: |
-  COVID 19 in India
+title: "Age and Alcohol"
+description: "Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths"
 output_dir: "docs"
 navbar:
   right:
