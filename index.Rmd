@@ -2,6 +2,9 @@
 title: "Alcohol Related Motor Deaths"
 description: "Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths"
 site: distill::distill_website
+author: 
+  - name: Shyam Sai Bethina
+date: 06-23-2021
 ---
 
 ```{r setup, include=FALSE}
@@ -23,6 +26,7 @@ library(rvest)
 
 
 ```
+## Context: 
 ```{r, echo=FALSE}
 website<-read_html("https://www.iihs.org/topics/fatality-statistics/detail/teenagers#alcohol-involvement")
 
@@ -51,7 +55,7 @@ graph1<-tibble(years,driverskilled_16,driverskilled_18,driverskilled_21,driversk
   mutate(across(everything(),as.numeric)) %>% 
   pivot_longer(cols=-years,
                names_sep = "_",names_to=c("type","age"),values_to="totalvalue") %>% 
- ggplot(aes(x=years,y=totalvalue,fill=type)) + geom_col(position="identity") + facet_wrap(~age) + labs(title="",subtitle = "",x="Year",y="Total Deaths", caption="Source: iihs.org") + theme_minimal() + theme(panel.spacing = unit(2, "lines")) + scale_fill_discrete(name = "Cause", labels = c("Alcohol","Other"))
+ ggplot(aes(x=years,y=totalvalue,fill=type)) + geom_col(position="identity") + facet_wrap(~age)+  labs(title="",subtitle = "",x="Year",y="Total Deaths", caption="Source: iihs.org") + theme_minimal() + theme(panel.spacing = unit(2, "lines")) + scale_fill_discrete(name = "Cause",   labels = c("Alcohol","Other"))
 ```
 
 ```{r}

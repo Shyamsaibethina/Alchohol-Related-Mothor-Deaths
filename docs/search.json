@@ -6,15 +6,28 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-06-23T15:39:18-04:00"
+      "last_modified": "2021-06-23T16:45:49-04:00"
+    },
+    {
+      "path": "Data.html",
+      "title": "Data",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-23T16:45:49-04:00"
     },
     {
       "path": "index.html",
       "title": "Alcohol Related Motor Deaths",
       "description": "Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2021-06-23T15:39:22-04:00"
+      "author": [
+        {
+          "name": "Shyam Sai Bethina",
+          "url": {}
+        }
+      ],
+      "date": "06-23-2021",
+      "contents": "\nContext:\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2021-06-23T16:45:53-04:00"
     }
   ],
   "collections": []
