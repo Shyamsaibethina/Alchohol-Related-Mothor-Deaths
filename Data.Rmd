@@ -60,6 +60,7 @@ graph1
 Taking a closer look at the percentages, as age increases, the percentage of alcohol related deaths increase, then decrease. But the overall trend is positive, which means that alcohol is a more prevalent cause in vehicle deaths.   
 
 ```{r, echo = FALSE}
+
 graph2<-tibble(years,percent_16,percent_18,percent_21,percent_30) %>% 
   mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
   mutate(across(everything(),as.numeric)) %>%
