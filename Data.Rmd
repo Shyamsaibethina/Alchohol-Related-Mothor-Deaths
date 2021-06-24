@@ -1,5 +1,5 @@
 ---
-title: "Data"
+title: "Trends"
 ---
 
 ```{r setup, include=FALSE}
@@ -38,38 +38,46 @@ driverskilled_30<-alldata[seq(37,520,13)]
 bac_30<-alldata[seq(38,520,13)]
 percent_30<-alldata[seq(39,520,13)]
 
-graph1<-tibble(years,driverskilled_16,driverskilled_18,driverskilled_21,driverskilled_30,bac_16,
-              bac_18,bac_21,bac_30) %>%  
-  mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
-  mutate(across(everything(),as.numeric)) %>% 
-  pivot_longer(cols=-years,
-               names_sep = "_",names_to=c("type","age"),values_to="totalvalue") %>% 
- ggplot(aes(x=years,y=totalvalue,fill=type)) + geom_col(position="identity") + 
-  transition_time(as.integer(age))+
-  labs(title="Total Motor Vehicle Deaths from 1982-2019, transitioning through ages 16-30",
-       x="Year",y="Total Deaths", caption="Source: iihs.org", 
-       subtitle="Through the ages of 16-30, the amount of deaths increased, but throughout the years, the total deaths decreased, except for age 30") + 
+graph1 <- tibble(years, driverskilled_16, driverskilled_18, driverskilled_21, driverskilled_30,                   bac_16, bac_18, bac_21, bac_30) %>%  
+  mutate(across(everything(), ~str_replace_all(., ",", ""))) %>% 
+  mutate(across(everything(), as.numeric)) %>% 
+  pivot_longer(cols = -years,
+               names_sep = "_",
+               names_to = c("type","age"),
+               values_to = "totalvalue") %>% 
+ ggplot(aes(x=years, y=totalvalue, fill=type)) + 
+ geom_col(position="identity") + 
+ transition_time(as.integer(age)) +
+ labs(title = "Total Motor Vehicle Deaths from 1982-2019, transitioning through ages 16-30",
+       x = "Year", 
+       y = "Total Deaths", 
+       caption = "Source: iihs.org", 
+       subtitle = "Through the ages of 16-30, the amount of deaths increased, but throughout the years, the total deaths decreased, except for age 30") + 
   theme_minimal() + 
   theme(panel.spacing = unit(2, "lines")) + 
-  scale_fill_discrete(name = "Cause",   labels = c("Alcohol","Other")) + 
+  scale_fill_discrete(name = "Cause", labels = c("Alcohol","Other")) + 
   labs(subtitle = "Age: {frame_time}")
 
-graph1
+graph1 #prints graph
 ```
 
 Taking a closer look at the percentages, as age increases, the percentage of alcohol related deaths increase, then decrease. But the overall trend is positive, which means that alcohol is a more prevalent cause in vehicle deaths.   
 
 ```{r, echo = FALSE}
 
-graph2<-tibble(years,percent_16,percent_18,percent_21,percent_30) %>% 
-  mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
-  mutate(across(everything(),as.numeric)) %>%
-  pivot_longer(cols=-years,names_sep="_", names_to = c(NA,"age"),values_to = "percent") %>% 
-  ggplot(aes(years,percent))+geom_col(color="steelblue") + theme_minimal() +  
+graph2 <- tibble(years, percent_16, percent_18, percent_21, percent_30) %>% 
+  mutate(across(everything(), ~str_replace_all(., ",", ""))) %>% 
+  mutate(across(everything(), as.numeric)) %>%
+  pivot_longer(cols = -years, names_sep = "_", names_to = c(NA,"age"), values_to = "percent")%>%
+  ggplot(aes(years, percent)) + geom_col(color = "steelblue") + 
+  theme_minimal() +  
   theme(panel.spacing = unit(2, "lines")) + 
   transition_time(as.integer(age)) + 
   labs(subtitle = "Year: {frame_time}") + 
-  labs(title="Percent of Total Deaths that are Alcohol Related from ages 16-30, from 1982-2019", subtitle="Around 21 years of age is when the percentage is the highest through all the years",x="Year",y="Percent of Total Vehicle Deaths thatare \n alcohol related (BAC >= 0.08)")
+  labs(title = "Percent of Total Deaths that are Alcohol Related from ages 16-30, from 1982-2019", 
+       subtitle = "Around 21 years of age is when the percentage is the highest through all the years",
+       x = "Year",
+       y = "Percent of Total Vehicle Deaths thatare \n alcohol related (BAC >= 0.08)")
 
-graph2
+graph2 #prints graph
 ```

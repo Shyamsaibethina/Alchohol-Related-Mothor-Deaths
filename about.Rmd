@@ -1,7 +1,6 @@
 ---
 title: "Conclusion and About Author"
 description: |
-  Some additional details about the website
 ---
 
 ```{r setup, include=FALSE}
@@ -10,4 +9,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Conclusion:
 
+Looking at the first graph, as the ages get higher, the total amount of deaths increases. But this can be attributed to the fact that teens drive less than adults. But the second graph shows that a high percentage of both 21-29 and 30+ age groups of the total deaths are because of alcohol. The highest peak is at the 21-29 age group, and this the legal age allowed to drink in most states. This means that Drinking and Driving is not prevelant in the minds of people who are older than 20 compared to 16-20 year olds.
 
+## About:
+
+Thanks for reading about my project! My name is Shyam Sai Bethina and I will be a senior at Dublin Coffman High School this fall. My passion is computer science, specifically Artificial Intelligence, and I enjoyed researching about this project. I love learning new languages, and I had a lot of fun learning about R and implementing it in this project!
+
+![](IMG_3548 copy.JPG){width=50}

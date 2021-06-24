@@ -86,33 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Shyam Sai Bethina: Alcohol Related Motor Deaths</title>
-
-  <meta property="description" itemprop="description" content="Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths"/>
+  <title>Shyam Sai Bethina: Steps</title>
 
 
-  <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-06-23"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-06-23"/>
-  <meta name="article:author" content="Shyam Sai Bethina"/>
+
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Shyam Sai Bethina: Alcohol Related Motor Deaths"/>
+  <meta property="og:title" content="Shyam Sai Bethina: Steps"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Shyam Sai Bethina"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Shyam Sai Bethina: Alcohol Related Motor Deaths"/>
-  <meta property="twitter:description" content="Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths"/>
+  <meta property="twitter:title" content="Shyam Sai Bethina: Steps"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","author","date"]}},"value":[{"type":"character","attributes":{},"value":["Alcohol Related Motor Deaths"]},{"type":"character","attributes":{},"value":["Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Shyam Sai Bethina"]}]}]},{"type":"character","attributes":{},"value":["06-23-2021"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["Steps"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2057,7 +2050,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Alcohol Related Motor Deaths","description":"Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths","authors":[{"author":"Shyam Sai Bethina","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-06-23T00:00:00.000+00:00","citationText":"Bethina, 2021"}
+{"title":"Steps","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2084,30 +2077,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Alcohol Related Motor Deaths</h1>
+<h1>Steps</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>Relationship between age groups and the amount of Alcohol related deaths compared to Total amount of deaths</p>
+
 </div>
 
-<div class="d-byline">
-  Shyam Sai Bethina  
-  
-<br/>06-23-2021
-</div>
 
 <div class="d-article">
-<h2 id="context">Context:</h2>
-<p>As someone who recently started driving, the first question that pops up for a new driver is “Am I doing anything wrong?” As countless driving courses for teens and beginner drivers preach, Do Not Drink and Drive. These lessons may be effective for some time, but do they deteriote in effectiveness over time?</p>
-<h2 id="goal">Goal:</h2>
-<p>Young drivers’ crash risk is substantially higher than adults when they drive after drinking alcohol, but are less likely than adults to consumer alcohol and drive.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The goal is to find out if people who are older get into more crashes because of Alcohol, and if we still need to only educate novice drivers about drinking and driving. Are teens the only age group where they are vulnerable to drink and drive, or are other groups more vulnerable? This project aims to answer that question.</p>
+<p>I got my data from this table that is on the website: <a href="https://www.iihs.org/topics/fatality-statistics/detail/teenagers#trends" class="uri">https://www.iihs.org/topics/fatality-statistics/detail/teenagers#trends</a></p>
+<p><img src="Screen%20Shot%202021-06-24%20at%201.15.21%20PM.png" width="200" /></p>
+<h2 id="graph-1">Graph 1:</h2>
+<p>Using the data in the table, I first got the Total deaths and amount of people who were drunk driving per age group and organized it in a table:</p>
+<p><img src="Screen%20Shot%202021-06-24%20at%201.23.41%20PM.png" width="200" /></p>
+<p>Then I used the following code to graph and implement transitions to the graph:</p>
+<p><img src="Screen%20Shot%202021-06-24%20at%201.29.40%20PM.png" width="200" /></p>
+<h2 id="graph-2">Graph 2:</h2>
+<p>For graph 2, I took the same approach, but this time I used the percent of Total Deaths that were caused by Drunk Driving and organized it into a table that is sorted by age and year:</p>
+<p><img src="Screen%20Shot%202021-06-24%20at%201.24.33%20PM.png" width="200" /></p>
+<p>Using the following code, I graphed using age as a variable for the transitions:</p>
+<p><img src="Screen%20Shot%202021-06-24%20at%201.29.50%20PM.png" width="200" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>Voas, R.B.; Torres, P.; Romano, E.; and Lacey, J.H. 2012. Alcohol-related risk of driver fatalities: an update using 2007 data. Journal of Studies on Alcohol and Drugs 73(3):341-350.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

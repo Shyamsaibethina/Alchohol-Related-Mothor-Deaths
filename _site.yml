@@ -6,8 +6,10 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Data"
+    - text: "Trends"
       href: Data.html
+    - text: "Data"
+      href: Steps.html
     - text: "About"
       href: about.html
     - icon: fa fa-github
