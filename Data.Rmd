@@ -58,8 +58,10 @@ graph2<-tibble(years,percent_16,percent_18,percent_21,percent_30) %>%
   mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
   mutate(across(everything(),as.numeric)) %>%
   pivot_longer(cols=-years,names_sep="_", names_to = c(NA,"age"),values_to = "percent") %>% 
-  ggplot(aes(years,percent))+geom_col(color="steelblue") + theme_minimal() + facet_wrap(~age) + 
-  theme(panel.spacing = unit(2, "lines"))
+  ggplot(aes(age,percent))+geom_col(color="steelblue") + theme_minimal() +  
+  theme(panel.spacing = unit(2, "lines")) + 
+  transition_time(as.integer(years)) + 
+  labs(subtitle = "Year: {frame_time}")
 
 graph2
 ```
