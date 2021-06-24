@@ -44,24 +44,31 @@ graph1<-tibble(years,driverskilled_16,driverskilled_18,driverskilled_21,driversk
   mutate(across(everything(),as.numeric)) %>% 
   pivot_longer(cols=-years,
                names_sep = "_",names_to=c("type","age"),values_to="totalvalue") %>% 
- ggplot(aes(x=age,y=totalvalue,fill=type)) + geom_col(position="identity") + 
-  transition_time(as.integer(years))+
-  labs(title="",subtitle = "Year: {frame_time}",x="Year",y="Total Deaths", caption="Source: iihs.org") + theme_minimal() + theme(panel.spacing = unit(2, "lines")) + scale_fill_discrete(name = "Cause",   labels = c("Alcohol","Other"))
+ ggplot(aes(x=years,y=totalvalue,fill=type)) + geom_col(position="identity") + 
+  transition_time(as.integer(age))+
+  labs(title="Total Motor Vehicle Deaths from 1982-2019, transitioning through ages 16-30",
+       x="Year",y="Total Deaths", caption="Source: iihs.org", 
+       subtitle="Through the ages of 16-30, the amount of deaths increased, but throughout the years, the total deaths decreased, except for age 30") + 
+  theme_minimal() + 
+  theme(panel.spacing = unit(2, "lines")) + 
+  scale_fill_discrete(name = "Cause",   labels = c("Alcohol","Other")) + 
+  labs(subtitle = "Age: {frame_time}")
 
 graph1
 ```
 
-Taking a closer look at the percentanges
+Taking a closer look at the percentages, as age increases, the percentage of alcohol related deaths increase, then decrease. But the overall trend is positive, which means that alcohol is a more prevalent cause in vehicle deaths.   
 
 ```{r, echo = FALSE}
 graph2<-tibble(years,percent_16,percent_18,percent_21,percent_30) %>% 
   mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
   mutate(across(everything(),as.numeric)) %>%
   pivot_longer(cols=-years,names_sep="_", names_to = c(NA,"age"),values_to = "percent") %>% 
-  ggplot(aes(age,percent))+geom_col(color="steelblue") + theme_minimal() +  
+  ggplot(aes(years,percent))+geom_col(color="steelblue") + theme_minimal() +  
   theme(panel.spacing = unit(2, "lines")) + 
-  transition_time(as.integer(years)) + 
-  labs(subtitle = "Year: {frame_time}")
+  transition_time(as.integer(age)) + 
+  labs(subtitle = "Year: {frame_time}") + labs(x="Year",y="Percent of Total Vehicle Deaths that
+                                               are alcohol related (BAC >= 0.08)")
 
 graph2
 ```
