@@ -15,4 +15,10 @@ Looking at the first graph, as the ages get higher, the total amount of deaths i
 
 Thanks for reading about my project! My name is Shyam Sai Bethina and I will be a senior at Dublin Coffman High School this fall. My passion is computer science, specifically Artificial Intelligence, and I enjoyed researching about this project. I love learning new languages, and I had a lot of fun learning about R and implementing it in this project!
 
+Contact me:
+
+shyamsaibethina@gmail.com
+
+614-500-1858
+
 ![](IMG_3548 copy.JPG){width=50}
