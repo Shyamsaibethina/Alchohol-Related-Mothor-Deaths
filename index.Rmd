@@ -13,11 +13,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Context:
 
-As someone who recently started driving, the first question that pops up for a new driver is "Am I doing anything wrong?" As countless driving courses for teens and beginner drivers preach, Do Not Drink and Drive. These lessons may be effective for some time, but are they still in the driver's mind after a couple of years?
+As someone who recently started driving, the first question that pops up for a new driver is "Am I doing anything wrong?" As countless driving courses for teens and beginner drivers preach, Do Not Drink and Drive. These lessons may be effective for some time, but do they deteriote in effectiveness over time?
 
 ## Goal:
 
-The goal is to find out if people who are older get into more crashes because of Alcohol, or we still need to solely educated novice drivers about drinking and driving. Are teens the only age group where they are vulnerable to drink and drive, or are other groups more vulnerable? This project aims to answer that question.
+
+Young drivers' crash risk is substantially higher than adults when they drive after drinking alcohol, but are less likely than adults to consumer alcohol and drive.^[Voas, R.B.; Torres, P.; Romano, E.; and Lacey, J.H. 2012. Alcohol-related risk of driver fatalities: an update using 2007 data. Journal of Studies on Alcohol and Drugs 73(3):341-350.] The goal is to find out if people who are older get into more crashes because of Alcohol, and if we still need to only educate novice drivers about drinking and driving. Are teens the only age group where they are vulnerable to drink and drive, or are other groups more vulnerable? This project aims to answer that question.
 
 
 
