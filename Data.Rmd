@@ -14,7 +14,7 @@ library(gifski)
 library(png)
 ```
 
-This graph shows that total number of deaths from the years 1982 to 2019. The graph shows the total deaths for the ages 16,18,21 and 30 and above. Each graph also shows how much of the total deaths are caused by having a blood alchohol concentration(bac) of 0.08 or higher, otherwise known as drinking and driving.
+This graph shows that total number of deaths from the years 1982 to 2019. The graph shows the total deaths for the ages 16,18,21 and 30 and above. Each graph also shows how much of the total deaths are caused by having a blood alchohol concentration(BAC) of 0.08 percent or higher, otherwise known as drinking and driving.
 
 ```{r, echo=FALSE}
 website<-read_html("https://www.iihs.org/topics/fatality-statistics/detail/teenagers#alcohol-involvement")
