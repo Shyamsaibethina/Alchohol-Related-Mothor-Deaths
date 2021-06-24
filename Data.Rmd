@@ -9,6 +9,9 @@ library(readr)
 library(dplyr)
 library(lubridate)
 library(rvest)
+library(gganimate)
+library(gifski)
+library(png)
 ```
 
 This graph shows that total number of deaths from the years 1982 to 2019. The graph shows the total deaths for the ages 16,18,21 and 30 and above. Each graph also shows how much of the total deaths are caused by having a blood alchohol concentration(bac) of 0.08 or higher, otherwise known as drinking and driving.
@@ -41,6 +44,22 @@ graph1<-tibble(years,driverskilled_16,driverskilled_18,driverskilled_21,driversk
   mutate(across(everything(),as.numeric)) %>% 
   pivot_longer(cols=-years,
                names_sep = "_",names_to=c("type","age"),values_to="totalvalue") %>% 
- ggplot(aes(x=years,y=totalvalue,fill=type)) + geom_col(position="identity") + facet_wrap(~age)+  labs(title="",subtitle = "",x="Year",y="Total Deaths", caption="Source: iihs.org") + theme_minimal() + theme(panel.spacing = unit(2, "lines")) + scale_fill_discrete(name = "Cause",   labels = c("Alcohol","Other"))
+ ggplot(aes(x=age,y=totalvalue,fill=type)) + geom_col(position="identity") + 
+  transition_time(as.integer(years))+
+  labs(title="",subtitle = "Year: {frame_time}",x="Year",y="Total Deaths", caption="Source: iihs.org") + theme_minimal() + theme(panel.spacing = unit(2, "lines")) + scale_fill_discrete(name = "Cause",   labels = c("Alcohol","Other"))
+
 graph1
+```
+
+Taking a closer look at the percentanges
+
+```{r, echo = FALSE}
+graph2<-tibble(years,percent_16,percent_18,percent_21,percent_30) %>% 
+  mutate(across(everything(),~str_replace_all(.,",",""))) %>% 
+  mutate(across(everything(),as.numeric)) %>%
+  pivot_longer(cols=-years,names_sep="_", names_to = c(NA,"age"),values_to = "percent") %>% 
+  ggplot(aes(years,percent))+geom_col(color="steelblue") + theme_minimal() + facet_wrap(~age) + 
+  theme(panel.spacing = unit(2, "lines"))
+
+graph2
 ```
