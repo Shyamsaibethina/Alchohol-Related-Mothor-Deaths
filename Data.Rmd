@@ -72,12 +72,12 @@ graph2 <- tibble(years, percent_16, percent_18, percent_21, percent_30) %>%
   ggplot(aes(years, percent)) + geom_col(color = "steelblue") + 
   theme_minimal() +  
   theme(panel.spacing = unit(2, "lines")) + 
-  transition_time(as.integer(age)) + 
-  labs(subtitle = "Year: {frame_time}") + 
-  labs(title = "Percent of Total Deaths that are Alcohol Related from ages 16-30, from 1982-2019", 
+  transition_time(as.integer(age))+ 
+  labs(title = "Percent of Total Deaths that are Alcohol Related \n from ages 16-30, from 1982-2019", 
        subtitle = "Around 21 years of age is when the percentage is the highest through all the years",
        x = "Year",
-       y = "Percent of Total Vehicle Deaths thatare \n alcohol related (BAC >= 0.08)")
+       y = "Percent of Total Vehicle Deaths thatare \n alcohol related (BAC >= 0.08)") + 
+  labs(subtitle = "Year: {frame_time}") 
 
 graph2 #prints graph
 ```

@@ -5,14 +5,14 @@
       "title": "Conclusion and About Author",
       "author": [],
       "contents": "\nConclusion:\nLooking at the first graph, as the ages get higher, the total amount of deaths increases. But this can be attributed to the fact that teens drive less than adults. But the second graph shows that a high percentage of both 21-29 and 30+ age groups of the total deaths are because of alcohol. The highest peak is at the 21-29 age group, and this the legal age allowed to drink in most states. This means that Drinking and Driving is not prevelant in the minds of people who are older than 20 compared to 16-20 year olds.\nAbout:\nThanks for reading about my project! My name is Shyam Sai Bethina and I will be a senior at Dublin Coffman High School this fall. My passion is computer science, specifically Artificial Intelligence, and I enjoyed researching about this project. I love learning new languages, and I had a lot of fun learning about R and implementing it in this project!\nContact me:\nshyamsaibethina@gmail.com\n614-500-1858\n\n\n\n\n",
-      "last_modified": "2021-06-24T19:23:31-04:00"
+      "last_modified": "2021-06-24T21:45:24-04:00"
     },
     {
       "path": "Data.html",
       "title": "Trends",
       "author": [],
       "contents": "\nThis graph shows that total number of deaths from the years 1982 to 2019. The graph shows the total deaths for the ages 16,18,21 and 30 and above. Each graph also shows how much of the total deaths are caused by having a blood alchohol concentration(BAC) of 0.08 percent or higher, otherwise known as drinking and driving.\n\n\n\nTaking a closer look at the percentages, as age increases, the percentage of alcohol related deaths increase, then decrease. But the overall trend is positive, which means that alcohol is a more prevalent cause in vehicle deaths.\n\n\n\n\n\n\n",
-      "last_modified": "2021-06-24T13:19:33-04:00"
+      "last_modified": "2021-06-24T21:53:56-04:00"
     },
     {
       "path": "index.html",
@@ -26,14 +26,14 @@
       ],
       "date": "06-23-2021",
       "contents": "\nContext:\nAs someone who recently started driving, the first question that pops up for a new driver is “Am I doing anything wrong?” As countless driving courses for teens and beginner drivers preach, Do Not Drink and Drive. These lessons may be effective for some time, but do they deteriote in effectiveness over time?\nGoal:\nYoung drivers’ crash risk is substantially higher than adults when they drive after drinking alcohol, but are less likely than adults to consumer alcohol and drive.1 The goal is to find out if people who are older get into more crashes because of Alcohol, and if we still need to only educate novice drivers about drinking and driving. Are teens the only age group where they are vulnerable to drink and drive, or are other groups more vulnerable? This project aims to answer that question.\n\nVoas, R.B.; Torres, P.; Romano, E.; and Lacey, J.H. 2012. Alcohol-related risk of driver fatalities: an update using 2007 data. Journal of Studies on Alcohol and Drugs 73(3):341-350.↩︎\n",
-      "last_modified": "2021-06-24T13:19:34-04:00"
+      "last_modified": "2021-06-24T21:46:25-04:00"
     },
     {
       "path": "Steps.html",
       "title": "Steps",
       "author": [],
       "contents": "\nI got my data from this table that is on the website: https://www.iihs.org/topics/fatality-statistics/detail/teenagers#trends\n\nGraph 1:\nUsing the data in the table, I first got the Total deaths and amount of people who were drunk driving per age group and organized it in a table:\n\nThen I used the following code to graph and implement transitions to the graph:\n\nGraph 2:\nFor graph 2, I took the same approach, but this time I used the percent of Total Deaths that were caused by Drunk Driving and organized it into a table that is sorted by age and year:\n\nUsing the following code, I graphed using age as a variable for the transitions:\n\n\n\n\n",
-      "last_modified": "2021-06-24T13:37:59-04:00"
+      "last_modified": "2021-06-24T21:46:25-04:00"
     }
   ],
   "collections": []
